@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: spring-1811-private-gitops
+  description: This is GitOps manifest for spring-1811-private   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: spring-1811-private
+    backstage.io/kubernetes-id: spring-1811-private 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: spring-1811-private-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:spring-1811-private

@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  rhtap/gitops: spring-1811-private 
+  janus-idp.io/tekton: spring-1811-private
+  backstage.io/kubernetes-id: spring-1811-private
+  backstage.io/kubernetes-namespace: rhtap-app 
+  app.kubernetes.io/part-of: spring-1811-private
+resources: 
+- application-dev.yaml 
+- application-stage.yaml 
+- application-prod.yaml  
